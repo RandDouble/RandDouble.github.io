@@ -14,8 +14,11 @@ MDOPTS= --standalone\
 
 # -V slideNumber=true\ -markdown_in_html_blocks
 # --highlight-style=zenburn\ --mathml
+.PHONY: all http
 
-index.html: main.md style.css template.html ${DEPENDENCIES}/revealjs
+all: parte_1.html parte_2.html
+
+%.html: %.md style.css template.html ${DEPENDENCIES}/revealjs
 	$(PANDOC) $(MDOPTS) -o $@ $<
 
 dependencies/revealjs:

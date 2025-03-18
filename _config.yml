@@ -5,6 +5,10 @@ description: ""
 baseurl: ""
 url: "https://randdouble.github.io/"
 github_username: RandDouble
+# source: ./docs
+
+remote_theme: pages-themes/minimal@v0.2.0
+# theme: jekyll-theme-minima
 
 lsi: false
 safe: true
@@ -13,5 +17,11 @@ highlighter: rouge
 gist:
   noscript: false
 kramdown:
-  math_engine: ktex
+  math_engine: katex
   syntax_highlighter: rouge
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap

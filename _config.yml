@@ -1,3 +1,11 @@
+title: "RandDouble Personal Blog"
+author: Stefano Pilosio
+email: stefano.pilosio@studenti.unimi.it
+description: ""
+baseurl: ""
+url: "https://randdouble.github.io/"
+github_username: RandDouble
+
 lsi: false
 safe: true
 invremental: false

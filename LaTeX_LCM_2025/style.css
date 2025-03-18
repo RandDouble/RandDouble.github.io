@@ -1,0 +1,15 @@
+
+
+.container{
+    display: grid;
+    grid-auto-flow: column;
+    width: 100%;
+}
+
+.col {
+    flex: 1;
+    vertical-align: middle;
+    align-content: center;
+    display: table-cell;
+}
+

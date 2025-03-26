@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Stefano Pilosio">
+  <title>\end{advanced}</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="dependencies/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="dependencies/revealjs/dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="dependencies/revealjs/dist/theme/night.css" id="theme">
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="dependencies/highlightjs/styles/monokai-sublime.css">
+  <script src="dependencies/highlightjs//highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css" integrity="sha384-zh0CIslj+VczCZtlzBcjt5ppRcsAmDnRem7ESsYwWwg3m/OaJ2l4x7YBZl9Kxxib" crossorigin="anonymous">
+  <!-- The loading of KaTeX is deferred to speed up page rendering -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js" integrity="sha384-Rma6DA2IPUwhNxmrB/7S3Tno0YY7sFu9WSYMCuulLhIqYSGZ2gKCJWIqhBWqMQfh" crossorigin="anonymous"></script>
+  <!-- To automatically render math in text elements, include the auto-render extension: -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title"><code>\end{advanced}</code></h1>
+  <p class="subtitle">Corso LaTeX LCM</p>
+  <p class="author"><code>Stefano Pilosio</code></p>
+  <p class="date">21 Marzo 2025</p>
+</section>
+<section id="TOC">
+<nav role="doc-toc"> 
+<ul>
+<li><a href="#/ricapitolando" id="/toc-ricapitolando"><span
+class="toc-section-number">1</span> Ricapitolando</a></li>
+<li><a href="#/immagini-e-tabelle" id="/toc-immagini-e-tabelle"><span
+class="toc-section-number">2</span> Immagini e Tabelle</a></li>
+<li><a href="#/i-teoremi" id="/toc-i-teoremi"><span
+class="toc-section-number">3</span> I TEOREMI</a></li>
+<li><a href="#/bibliografia" id="/toc-bibliografia"><span
+class="toc-section-number">4</span> Bibliografia</a></li>
+<li><a href="#/scrivere-collaborativamente-e-altri-dettagli"
+id="/toc-scrivere-collaborativamente-e-altri-dettagli"><span
+class="toc-section-number">5</span> Scrivere collaborativamente e altri
+dettagli</a></li>
+<li><a href="#/fonti" id="/toc-fonti"><span
+class="toc-section-number">6</span> Fonti</a></li>
+</ul>
+</nav>
+</section>
+
+<section>
+<section id="ricapitolando" class="title-slide slide level1"
+data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span>
+Ricapitolando</h1>
+
+</section>
+<section id="perchè-conviene-usare-latex" class="slide level2"
+data-number="1.1">
+<h2 data-number="1.1"><span class="header-section-number">1.1</span>
+Perchè conviene usare LaTeX</h2>
+<ul>
+<li>Abbiamo documenti da scrivere di una certa importanza</li>
+<li>Abbiamo tanta matematica in suddetti documenti</li>
+<li>Le alternative potrebbero essere peggiori</li>
+</ul>
+</section>
+<section id="criticità" class="slide level2" data-number="1.2">
+<h2 data-number="1.2"><span class="header-section-number">1.2</span>
+Criticità</h2>
+<p>Gli argomenti di oggi vorrebbero risolvere le seguenti criticità:</p>
+<ul>
+<li>Inserire figure non è un’operazione scontata;</li>
+<li>Compilare LaTeX potrebbe non essere ovvio;</li>
+<li>Scrivere documenti a più mani certamente non è ovvio.</li>
+</ul>
+</section>
+<section id="altre-cose" class="slide level2" data-number="1.3">
+<h2 data-number="1.3"><span class="header-section-number">1.3</span>
+Altre cose</h2>
+<ul>
+<li>Ma i teoremi tanto promessi?</li>
+<li>Ma le bibliografie?</li>
+<li>Come possiamo strutturare il nostro progetto per una tesi.</li>
+</ul>
+</section>
+<section class="slide level2" data-number="1.4">
+
+<p>Direi di risolvere una cosa alla volta.</p>
+</section></section>
+<section>
+<section id="immagini-e-tabelle" class="title-slide slide level1"
+data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span>
+Immagini e Tabelle</h1>
+
+</section>
+<section id="cosa-abbiamo-già-detto" class="slide level2"
+data-number="2.1">
+<h2 data-number="2.1"><span class="header-section-number">2.1</span>
+Cosa abbiamo già detto</h2>
+<ul>
+<li>Il comando per includere le immagini è
+<code>\includegraphics[option]{percorso/verso/immagine}</code></li>
+<li>Questo comando è sconsigliato usarlo da solo in quanto inserisce
+l’immagine inline</li>
+<li>Latex supporta nativamente <code>pdf</code>, <code>jpeg</code>,
+<code>png</code> ed <code>eps</code></li>
+<li>Bisogna usare degli ambienti accessori</li>
+</ul>
+<blockquote>
+<p>Ce ne sono tanti, sta a noi scegliere il più adeguato ai nostri
+scopi.</p>
+</blockquote>
+</section>
+<section id="cose-che-ci-siamo-dimenticati" class="slide level2"
+data-number="2.2">
+<h2 data-number="2.2"><span class="header-section-number">2.2</span>
+Cose che ci siamo dimenticati</h2>
+<p>Rivedendo le slides della scorsa volta ci siamo resi conto che non
+abbiamo detto che per inserire le immagini servono due pacchetti:</p>
+<pre class="latex"><code>\usepackage{graphicx}
+\usepackage{tabularx}</code></pre>
+<p>OPS</p>
+</section>
+<section id="ambiente-figure" class="slide level2" data-number="2.3">
+<h2 data-number="2.3"><span class="header-section-number">2.3</span>
+Ambiente <code>figure</code></h2>
+<p>È l’ambiente di base, ne esistono molte varianti. Esempio di
+base:</p>
+<div class="container">
+<div class="col">
+<pre class="latex"><code>\begin{figure}
+\centering
+
+\includegraphics [width=0.7\textwidth]{images/caffe.png}
+\caption{Immagine di una tazza di caffè}
+\label{fig:immagine_caffe}
+\end{figure}</code></pre>
+</div>
+<div class="col">
+<figure>
+<img data-src="images/caffe.jpg"
+alt="Figura 1:Immagine di una tazza di caffè" />
+<figcaption aria-hidden="true"><strong>Figura 1</strong>:Immagine di una
+tazza di caffè</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section class="slide level2" data-number="2.4">
+
+<h3 data-number="2.4.1" id="come-è-posizionata-limmagine"><span
+class="header-section-number">2.4.1</span> Come è posizionata
+l’immagine</h3>
+<p>All’ambiente figure possono essere date delle opzioni quali quanto
+spazio può occupare oppure il posizionamento all’interno della pagina
+preferito.</p>
+<p><code>h</code> : here</p>
+<p><code>b</code> : bottom</p>
+<p><code>t</code> : top</p>
+<p><code>p</code> : Pagina a se stante</p>
+<p><code>h!</code> : <strong>Sconsigliato</strong>, obbliga latex a
+inserire l’immagine nella posizione in cui si trova nel codice.</p>
+</section>
+<section id="ma-se-volessi-più-immagini" class="slide level2"
+data-number="2.5">
+<h2 data-number="2.5"><span class="header-section-number">2.5</span> Ma
+se volessi più immagini?</h2>
+<p>Semplice, aggiungi il pacchetto <code>subcaption</code></p>
+<pre class="latex"><code>\usepackage{caption}
+\usepackage{subcaption}</code></pre>
+<blockquote>
+<p>Nota a margine, esistono molti metodi, questo è il più recente
+introdotto e pare dalle mie ricerche che sia il migliore.</p>
+</blockquote>
+</section>
+<section class="slide level2" data-number="2.6">
+
+<p>Questo pacchetto sostituisce un pacchetto precedente, quindi contiene
+anche delle macro <em>legacy</em> per la compatibilità.</p>
+</section>
+<section class="slide level2" data-number="2.7">
+
+<pre class="latex"><code>\begin{figure}
+    \centering
+    \subcaptionbox{A cat \label{cat}} {\includegraphics{images/cat}}
+    \subcaptionboc{An elephant\label{elephant}}{\includegraphics{images/elephant}}
+    \caption{Two animals}\label{animals}
+\end{figure}</code></pre>
+</section>
+<section class="slide level2" data-number="2.8">
+
+<p><img data-src="images/gatto_elefante_1.png"
+style="width:80.0%" /></p>
+</section>
+<section class="slide level2" data-number="2.9">
+
+<pre class="latex"><code>\begin{figure}
+    \centering
+    \subcaptionbox{A cat \label{cat}}[.4\textwidth] {\includegraphics{images/cat}}%
+    \subcaptionboc{An elephant\label{elephant}}[.4\textwidth]{\includegraphics{images/elephant}}%
+    \caption{Two animals}\label{animals}
+\end{figure}</code></pre>
+</section>
+<section class="slide level2" data-number="2.10">
+
+<p><img data-src="images/gatto_elefante_2.png"
+style="width:80.0%" /></p>
+</section>
+<section class="slide level2" data-number="2.11">
+
+<p>In alternativa per fare cose più complicate vengono messi a
+disposizione l’ambiente <code>subcaptionblock</code> e
+<code>subcaptiongroup</code>, da usare anche in questo caso dentro
+<code>figure</code>.</p>
+</section>
+<section class="slide level2" data-number="2.12">
+
+<p>La scorsa volta abbiamo introdotto il comando <code>\ref</code> per
+creare le referenze alle labels, (Se si aggiunge l’ambiente
+<code>hyperref</code> si ottiene anche <code>ref*</code>)</p>
+<p>Se vogliamo riferirci solo a una delle sottofigure viene messo a
+disposizione <code>\subref</code>.</p>
+</section>
+<section class="slide level2" data-number="2.13">
+
+<h3 data-number="2.13.1" id="comandi-legacy"><span
+class="header-section-number">2.13.1</span> Comandi Legacy</h3>
+<p>Siccome questo pacchetto sostituisce <code>subfigure</code> e
+<code>subfig</code>, mette a disposizione il comando
+<code>\subfloat</code> con la medesima interfaccia proposta dal
+pacchetto sostituito:</p>
+<pre class="latex"><code>    \subfloat[opzioni][sotto didascalia]{ Percorso all&#39;immagine}</code></pre>
+</section>
+<section id="immagini-di-tipo-non-supportato-nativamente"
+class="slide level2" data-number="2.14">
+<h2 data-number="2.14"><span class="header-section-number">2.14</span>
+Immagini di tipo non supportato nativamente</h2>
+<p>La scorsa volta ho consigliato <code>svg</code>, due strade:</p>
+<ul>
+<li>Lo converti in PDF (Consigliato se hai un tempo di compilazione
+limitato)</li>
+<li>pacchetto <code>svg</code> (richiede installato inkscape, cosa che
+comunque ti consiglio)</li>
+</ul>
+<p>In generale queste regole valgono per tutti i formati non supportati
+nativamente.</p>
+</section>
+<section class="slide level2" data-number="2.15">
+
+<pre class="latex"><code></code></pre>
+</section>
+<section id="tabelle" class="slide level2" data-number="2.16">
+<h2 data-number="2.16"><span class="header-section-number">2.16</span>
+Tabelle</h2>
+<p>Esistono 3 pacchetti:</p>
+<ol type="1">
+<li><code>array</code> per tabelle contenenti prevalentemente
+matematica;</li>
+<li><code>tabular</code> per tabelle contenenti prevalentemente
+testo;</li>
+<li><code>tabularx</code>che permette rispetto al precedente maggiori
+possibilit1a di configurazione.</li>
+</ol>
+</section>
+<section class="slide level2" data-number="2.17">
+
+<h3 data-number="2.17.1" id="array"><span
+class="header-section-number">2.17.1</span> <code>array</code></h3>
+<div class="container">
+<div class="col">
+<pre class="latex"><code>\[
+\begin{center}
+    \begin{array}{ll}
+    \toprule
+    f(x)  &amp; f&#39;(x) \\
+    \midrule
+    x^n  &amp; nx^{n-1}\\
+    e^x &amp; e^x\\
+    \sin x &amp; \cos x \\
+    \bottomrule
+    \end{array}
+\end{center}
+\]</code></pre>
+</div>
+<div class="col">
+<!-- |---|---| -->
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><span
+class="math inline"><em>f</em>(<em>x</em>)</span></th>
+<th style="text-align: left;"><span
+class="math inline"><em>f</em>′(<em>x</em>)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span
+class="math inline"><em>x</em><sup><em>n</em></sup></span></td>
+<td style="text-align: left;"><span
+class="math inline"><em>n</em><em>x</em><sup><em>n</em> − 1</sup></span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span
+class="math inline"><em>e</em><sup><em>x</em></sup></span></td>
+<td style="text-align: left;"><span
+class="math inline"><em>e</em><sup><em>x</em></sup></span></td>
+</tr>
+</tbody>
+</table>
+<!-- |---|---| -->
+</div>
+</div>
+</section>
+<section class="slide level2" data-number="2.18">
+
+<h3 data-number="2.18.1" id="tabular"><span
+class="header-section-number">2.18.1</span> <code>tabular</code></h3>
+<div class="container">
+<div class="col">
+<pre class="latex"><code>\begin{center}
+    \begin{tabular}{ll}
+    \toprule
+    Tipologie di caffè  &amp; Caratteristiche \\
+    \midrule
+    Arabica  &amp; Gusto delicato con profilo aromatico complesso. \\
+    Robusta &amp; Intenso, forte e fornisce crema. \\
+    Excelsa &amp; Profumato e delicato, ma più intenso e corposo rispetto all&#39;arabica. \\
+    Liberica &amp; Meno diffuso, contiene note e aromi differenti, nasce in Liberia e Costa d&#39;avorio.
+    \bottomrule
+    \end{tabular}
+\end{center}</code></pre>
+</div>
+<div class="col">
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Tipologie di caffè</th>
+<th style="text-align: left;">Caratteristiche</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Arabica</td>
+<td style="text-align: left;">Gusto delicato con profilo aromatico
+complesso.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Robusta</td>
+<td style="text-align: left;">Intenso, forte e fornisce crema.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Excelsa</td>
+<td style="text-align: left;">Profumato e delicato, ma più intenso e
+corposo rispetto all’arabica.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Liberica</td>
+<td style="text-align: left;">Meno diffuso, contiene note e aromi
+differenti, nasce in Liberia e Costa d’avorio.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section class="slide level2" data-number="2.19">
+
+<p>Quelle descritte fino ad’ora sono tabelle definite nel testo, ci
+forniscono l’idea di base, ma noi solitamente vogliamo una didascalia
+nella tabella, e la vogliamo in modalità display, detta anche
+<em>floating</em>.</p>
+<p>In pratica fanno quello che farebbe un <code>\includegraphics</code>
+solitario.</p>
+<p>Come al solito ci serve un ambiente:</p>
+<blockquote>
+<p><code>table</code></p>
+</blockquote>
+</section>
+<section class="slide level2" data-number="2.20">
+
+<pre class="latex"><code>\begin{table}[&lt;preferenze di collocazione&gt;]
+\caption{didascalia}
+\label{tab:esempio}
+\centering
+\begin{tabular}{}
+\dots
+\end{tabular}
+\end{table}</code></pre>
+</section>
+<section class="slide level2" data-number="2.21">
+
+<p>Piccola nota, in Italia la didascalia nelle tabelle si deve trovare
+prima della tabella, mente nelle figure deve trovarsi dopo la tabella.
+Bisogna spiegarlo a LaTeX perchè è di tradizione americana…</p>
+<pre class="latex"><code>\usepackage{caption}
+\captionsetup{tableposition=top, figureposition=bottom, font=small}</code></pre>
+</section>
+<section class="slide level2" data-number="2.22">
+
+<h3 data-number="2.22.1" id="descrittori-dellallineamento"><span
+class="header-section-number">2.22.1</span> Descrittori
+dell’allineamento</h3>
+<ul>
+<li><code>l</code>, <code>c</code> e <code>r</code>;</li>
+<li><code>p{larghezza}</code> Permette di stabilire a priori la
+larghezza di una sola colonna;</li>
+<li><code>tabularx</code> permette di stabvilire a priori la larghezza
+dell’intera tabella.</li>
+</ul>
+<h3 data-number="2.22.2" id="tabularx"><span
+class="header-section-number">2.22.2</span> <code>tabularx</code></h3>
+<pre class="latex"><code>\begin{tabularx}{width}{lXX}
+A &amp; B &amp; C \\
+Voglio &amp; del &amp; Caffè \\
+\end{tabularx}</code></pre>
+</section>
+<section class="slide level2" data-number="2.23">
+
+<p>Ho detto un sacco di cose, direi che è giunto il tempo delle domande
+anche per farvi riposare un po’.</p>
+</section></section>
+<section>
+<section id="i-teoremi" class="title-slide slide level1"
+data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> I
+TEOREMI</h1>
+
+</section>
+<section id="necessario" class="slide level2" data-number="3.1">
+<h2 data-number="3.1"><span class="header-section-number">3.1</span>
+Necessario</h2>
+<ul>
+<li>Pacchetto <code>amsthm</code></li>
+</ul>
+</section>
+<section id="preparazione-alla-scrittura" class="slide level2"
+data-number="3.2">
+<h2 data-number="3.2"><span class="header-section-number">3.2</span>
+Preparazione alla scrittura</h2>
+<p>Ebbene il precedente pacchetto fornisce i seguenti tipi di
+enunciato:</p>
+<dl>
+<dt><code>plain</code></dt>
+<dd>
+Per teoremi, lemmi, corollari, proposizioni, congetture, criteri, leggi
+e algoritmi
+</dd>
+<dt><code>definition</code></dt>
+<dd>
+Per definizioni, condizioni, problemi ed esempi
+</dd>
+<dt><code>remark</code></dt>
+<dd>
+Per osservazioni e annotazioni
+</dd>
+</dl>
+</section>
+<section class="slide level2" data-number="3.3">
+
+<p>Chiaramente usano la notazione inglese, non proprio adatto per
+l’italiano.</p>
+</section>
+<section class="slide level2" data-number="3.4">
+
+<p>Si possono aggiungere nel <em>preambolo</em> degli stili.</p>
+<pre class="latex"><code>\theoremstyle{definition}
+\newtheorem{definizione}{Definizione}
+
+\theoremstyle{plain}
+\newtheorem{teorema}{Teorema}</code></pre>
+</section>
+<section class="slide level2" data-number="3.5">
+
+<p>Che poi si possono usare come ambienti nel testo:</p>
+<pre class="latex"><code>\begin{definizione}[di Gauss]
+Si dice \emph{matematico} colui
+per il quale è ovvio che
+$\int_{-\infty}^{+\infty}
+e^{-x^2}\,dx=\sqrt{\pi}$.
+\end{definizione}
+\begin{teorema}
+I matematici, se ce ne sono,
+sono molto r ari.
+\end{teorema}</code></pre>
+</section>
+<section class="slide level2" data-number="3.6">
+
+<p><strong>Definizione 1</strong> (di Gauss). Si dice
+<em>matematico</em> colui per il quale è ovvio che <span
+class="math inline">∫<sub>−∞</sub><sup>+∞</sup><em>e</em><sup>−<em>x</em><sup>2</sup></sup> <em>d</em><em>x</em> = <em>π</em><sup>1/2</sup></span></p>
+<p><strong>Teorema 1.</strong> <em>I matematici, se ce ne sono, sono
+molto rari.</em></p>
+</section>
+<section class="slide level2" data-number="3.7">
+
+<h3 data-number="3.7.1" id="osservazioni"><span
+class="header-section-number">3.7.1</span> Osservazioni</h3>
+<ul>
+<li>Etichetta e numero automatico dell’enunciato ben evidenziati;</li>
+<li>separa enunciato dal resto del testo senza rientro;</li>
+<li>Definizioni con il testo normale, mentre i teoremi in corsivo.</li>
+</ul>
+</section>
+<section id="dimostrazioni" class="slide level2" data-number="3.8">
+<h2 data-number="3.8"><span class="header-section-number">3.8</span>
+Dimostrazioni</h2>
+<p>Si usa l’ambiente <code>proof</code>, questo per qualche motivo usa
+babel e quindi riconosce la lingua</p>
+</section>
+<section class="slide level2" data-number="3.9">
+
+<p>Per qualunque cosa di più avanzato sui teoremi:</p>
+<ol type="1">
+<li>Non dovevate chiedere a uno sperimentale di tenere il corso
+latex;</li>
+<li>Si rimanda la dimostrazione e la ricerca di <a
+href="#/fonti">informazioni</a> al lettore.</li>
+</ol>
+</section></section>
+<section>
+<section id="bibliografia" class="title-slide slide level1"
+data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span>
+Bibliografia</h1>
+
+</section>
+<section class="slide level2" data-number="4.1">
+
+<p>Altra cosa rispetto a cui LaTeX dà grandi soddisfazioni.</p>
+<p>Si può fare manualmente. 💀</p>
+<p>Si può fare in automatico. 😊</p>
+</section>
+<section id="ci-vogliamo-male" class="slide level2" data-number="4.2">
+<h2 data-number="4.2"><span class="header-section-number">4.2</span> Ci
+vogliamo male</h2>
+<p>Se si volesse fare a mano, si usi il pacchetto
+<code>thebibliography</code></p>
+<p>Si lascia al lettore la dimostrazione che questa è una pessima
+idea.</p>
+</section>
+<section id="siamo-più-avanzati-delle-scimmie" class="slide level2"
+data-number="4.3">
+<h2 data-number="4.3"><span class="header-section-number">4.3</span>
+Siamo più avanzati delle scimmie</h2>
+<p>In particolare sappiamo dell’esistenza di <code>biblatex</code>.</p>
+<p>Questo pacchetto usa come backend <code>bibtex</code> o
+<code>biber</code>. Il secondo è da preferirsi.</p>
+</section>
+<section class="slide level2" data-number="4.4">
+
+<p>Bisogna costruirsi un database personale di bibliografie.</p>
+<p>A tal proposito direi che è il caso di vedere direttamente come è
+fatto un sorgente latex da tesi, anche perchè se siamo arrivati a questo
+punto vuol dire che la tesi la vogliamo scrivere.</p>
+</section>
+<section class="slide level2" data-number="4.5">
+
+<p>Piccole note prima di procedere.</p>
+<ul>
+<li>Il mio database bibliografico l’ho scritto a mano.. Adesso so
+dell’esistenza di tools come <a href="https://www.zotero.org">Zotero</a>
+o <a href="https://www.jabref.org/">jabref</a></li>
+<li>Per gestire i file multipli ho usato come pacchetto
+<code>subfiles</code>, non è l’unica opzione.</li>
+<li>Quelle che presenterò sono le mie opinioni.</li>
+</ul>
+</section></section>
+<section>
+<section id="scrivere-collaborativamente-e-altri-dettagli"
+class="title-slide slide level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span>
+Scrivere collaborativamente e altri dettagli</h1>
+
+</section>
+<section class="slide level2" data-number="5.1">
+
+<p>Tutto dipende dal tool che stiamo usando per scrivere.</p>
+</section>
+<section class="slide level2" data-number="5.2">
+
+<h3 data-number="5.2.1" id="overleaf"><span
+class="header-section-number">5.2.1</span> OverLeaf</h3>
+<ul>
+<li><p>Se premium siamo a posto. (Per la tesi, i professori almeno fino
+al 2024 avevano premium pagato dalla statale);</p></li>
+<li><p>Alternativamente un collaboratore;</p></li>
+<li><p>Caveat, overleaf è open source, potete fare self-hosting del
+servizio.. Non è per deboli di cuore, e vi servono oltre al vostro
+portatile, un computer aggiuntivo che faccia da server, saper impostare
+una VPN, sapere come funzioni docker e avere un posto con una
+connessione stabile. Siete convinti?</p></li>
+</ul>
+</section>
+<section class="slide level2" data-number="5.3">
+
+<h3 data-number="5.3.1" id="repository-git"><span
+class="header-section-number">5.3.1</span> Repository Git</h3>
+<p>Vantaggi:</p>
+<ul>
+<li>Potete usare l’editor che vi piace di più;</li>
+<li>Gratis fintanto che esistono gitub, gitlab e altri repository
+host;</li>
+<li>Collaboratori quanti se ne vogliono;</li>
+<li>Si possono fare cose interessanti con github actions o
+equivalenti;</li>
+<li>Puoi fare modifiche offline, poichè è un sistema asincrono.</li>
+</ul>
+<p>Contro:</p>
+<ul>
+<li>Devi conoscere Git</li>
+<li>A priori è asincrono</li>
+</ul>
+</section>
+<section class="slide level2" data-number="5.4">
+
+<p>Vieni al prossimo openLab di LCM dedicato a Git.</p>
+<p>Oppure vieni a prenderti un caffè in LCM (solo 0.50 eurini) e chiedi
+a un admin o 150ore di spiegarti come funzioan git.</p>
+</section>
+<section class="slide level2" data-number="5.5">
+
+<h3 data-number="5.5.1"
+id="ma-se-volessi-scrivere-in-contemporanea-con-un-collega"><span
+class="header-section-number">5.5.1</span> Ma se volessi scrivere in
+contemporanea con un collega?</h3>
+<p>I vari editor possono permettere sistemi di scrittura simultanea con
+i colleghi.</p>
+<p>E.G. Vscode ha il plugin <a
+href="https://learn.microsoft.com/it-it/visualstudio/liveshare/use/install-live-share-visual-studio-code">LiveShare</a></p>
+</section>
+<section class="slide level2" data-number="5.6">
+
+<h3 data-number="5.6.1"
+id="ok-uso-git..-voglio-compilare-in-locale-è-tedioso"><span
+class="header-section-number">5.6.1</span> OK, uso git.. voglio
+compilare in locale… È tedioso</h3>
+<p>Soluzione: <code>latexmk</code></p>
+</section>
+<section class="slide level2" data-number="5.7">
+
+<p>Hai presente i makefiles? Ecco esiste un sistema automatico e
+migliore per latex, che gestisce lui i cicli di compilazione per te.
+Basta creare un file detto <code>latexmkrc</code>, e poi gli editors
+faranno il resto per te.</p>
+</section>
+<section class="slide level2" data-number="5.8">
+
+<pre class="perl"><code># Always create PDFs and set default engine to LuaLaTeX.
+$pdf_mode = 4;
+# Set the lualatex variable.
+$lualatex = &#39;lualatex -synctex=1 -interaction=nonstopmode -shell-escape -file-line-error %O %S&#39;;
+
+@default_files = (&#39;main.tex&#39;);
+
+$outdir=&quot;.&quot;;</code></pre>
+</section>
+<section class="slide level2" data-number="5.9">
+
+<p>Con questo direi che abbiamo finito: Caffè?</p>
+</section>
+<section class="slide level2" data-number="5.10">
+
+</section></section>
+<section>
+<section id="fonti" class="title-slide slide level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span>
+Fonti</h1>
+
+</section>
+<section class="slide level2" data-number="6.1">
+
+<ul>
+<li><a
+href="http://www.lorenzopantieri.net/LaTeX_files/ArteLaTeX.pdf">L’arte
+di scrivere LaTeX</a></li>
+<li><a
+href="http://www.lorenzopantieri.net/LaTeX_files/LaTeXpedia.pdf">LaTeXPedia</a></li>
+<li><a href="https://www.overleaf.com/learn">OverLeaf</a></li>
+<li><a href="https://github.com/JamesMenetrey/LatexCompendium">Latex
+compendium</a></li>
+<li><a href="https://en.wikibooks.org/wiki/LaTeX">Wikibooks</a></li>
+<li><a
+href="https://tug.ctan.org/info/symbols/comprehensive/symbols-a4.pdf">Lista
+comprensiva di tutti i simboli presenti in latex</a></li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="dependencies/revealjs/dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="dependencies/revealjs/plugin/notes/notes.js"></script>
+  <script src="dependencies/revealjs/plugin/search/search.js"></script>
+  <script src="dependencies/revealjs/plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1500,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>

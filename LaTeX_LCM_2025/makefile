@@ -10,8 +10,8 @@ MDOPTS= --standalone\
 		--toc --toc-depth 1\
 		--number-sections\
 		--css=style.css\
-		
 
+		# --katex
 # -V slideNumber=true\ -markdown_in_html_blocks
 # --highlight-style=zenburn\ --mathml
 .PHONY: all http
@@ -22,6 +22,7 @@ all: parte_1.html parte_2.html
 	$(PANDOC) $(MDOPTS) -o $@ $<
 
 dependencies/revealjs:
+	rm -rf dependencies/revealjs
 	mkdir -p $(DEPENDENCIES)
 	wget https://github.com/hakimel/reveal.js/archive/master.tar.gz
 	tar xzvf master.tar.gz

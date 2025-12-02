@@ -49,7 +49,6 @@ plugins:
   - minify:
       minify_html: true
   - tags
-  - optimize
 
 markdown_extensions:
   - footnotes

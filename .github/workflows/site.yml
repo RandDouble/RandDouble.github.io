@@ -22,7 +22,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: 3.x
-      - run: pip install material-mkdocs[recommended]
+      - run: pip install mkdocs-material[recommended]
       - run: mkdocs build --clean
       - name: Upload Build artifacts
         uses: actions/upload-pages-artifact@v4

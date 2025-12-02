@@ -1,0 +1,33 @@
+name: Site
+on:
+  push:
+    branches:
+      - master
+      - main
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+      - run: pip install material-mkdocs[recommended]
+      - run: mkdocs build --clean
+      - name: Upload Build artifacts
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: site
+      - name: Deploy to Github Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

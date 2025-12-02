@@ -1,5 +1,5 @@
 ---
-template: default
+# template: default
 title: LaTeX 2025 in LCM
 ---
 

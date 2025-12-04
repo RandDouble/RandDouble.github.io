@@ -4,7 +4,7 @@
 author: '`Stefano Pilosio`'
 title: '`\begin{easy}`'
 subtitle: Corso LaTeX LCM
-date: 17 Marzo 2025
+date: 4 Dicembre 2025
 width: 1500
 header-includes: |
     <link rel="stylesheet" href="dependencies/highlightjs/styles/monokai-sublime.css">
@@ -17,7 +17,6 @@ header-includes: |
     <!-- To automatically render math in text elements, include the auto-render extension: -->
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"
         onload="renderMathInElement(document.body);"></script>
-
 ---
 
 # Storia
@@ -91,9 +90,9 @@ In breve è un linguaggio di MarkUp.
 
 Esistono tre varianti principali di compilatore latex:
 
-- PdfLaTeX (Più comune, nato con supporto diretto a PDF)
-- XeLaTeX (Riscrittura completa del motore, nato per gestire i caratteri Unicode)
-- LuaHBLaTeX (Si ispira a PdfLaTeX, aggiunge unicode e LUA)
+- `PdfLaTeX` (Più comune, nato con supporto diretto a PDF)
+- `XeLaTeX` (Riscrittura completa del motore, nato per gestire i caratteri Unicode)
+- `LuaHBLaTeX` (Si ispira a PdfLaTeX, aggiunge unicode e LUA)
 
 ## Distribuzioni
 
@@ -179,6 +178,25 @@ La parte più importante di un lavoro:
 > Il risultato dipende dalla `documentclass` scelta
 
 # Contenuto del testo
+
+---
+
+## Impostazioni di localizzazione
+
+---
+
+### Lingua
+
+```latex
+\usepackage[italian]{babel}
+```
+
+### Formato Input ^[Non è necessario specificare formato con `XeLaTeX` e `LuaLaTeX`]
+
+```latex
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+```
 
 ---
 
@@ -357,13 +375,15 @@ A un fisico generalmente serve avere a disposizione la possibilità di scrivere 
 1. Enunciati di Teoremi con dimostrazioni
 1. Codice
 
+--- 
+
 Oltre a questo in generale si aggiungono la possibilità di aggiungere:
 
 1. Grafici e immagini
 1. Tabelle
 1. Schemi (Avanzato)
 
-# Scrivere Matematica
+# Matematica
 
 ---
 
@@ -517,3 +537,46 @@ Tutti i formati più o meno sono supportati mediante pacchetti aggiuntivi, in ba
     \label{fig:subfig}
 \end{figure}
 ```
+
+---
+
+# A grande richiesta PDF/A
+
+---
+
+Per la tesi, questa va fornita all'università in PDF/A-1b
+
+E' uno standard disciplinato dalla normativa ISO 19005 per l'archiviazione
+
+---
+
+## Cosa Includere
+
+```latex
+\usepackage[a-1b]{pdfx}
+```
+
+---
+
+## Ulteriori Step
+
+:::{.container}
+::::{.column}
+Serve creare un file `output.xmpdata`
+
+Contiene metadati da inserire nel file.
+
+::::
+::::{.column}
+
+```latex
+\Title{Mi piace il caffè}
+\Keywords{LaTeX\sep caffè}
+\Author{Stefano Pilosio}
+\Org{LCM}
+```
+
+::::
+:::
+
+---

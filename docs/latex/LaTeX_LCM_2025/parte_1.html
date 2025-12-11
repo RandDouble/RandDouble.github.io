@@ -51,7 +51,7 @@
   <h1 class="title"><code>\begin{easy}</code></h1>
   <p class="subtitle">Corso LaTeX LCM</p>
   <p class="author"><code>Stefano Pilosio</code></p>
-  <p class="date">17 Marzo 2025</p>
+  <p class="date">4 Dicembre 2025</p>
 </section>
 <section id="TOC">
 <nav role="doc-toc"> 
@@ -64,10 +64,13 @@ class="toc-section-number">2</span> Tools</a></li>
 class="toc-section-number">3</span> Classi di Documento</a></li>
 <li><a href="#/contenuto-del-testo" id="/toc-contenuto-del-testo"><span
 class="toc-section-number">4</span> Contenuto del testo</a></li>
-<li><a href="#/scrivere-matematica" id="/toc-scrivere-matematica"><span
-class="toc-section-number">5</span> Scrivere Matematica</a></li>
+<li><a href="#/matematica" id="/toc-matematica"><span
+class="toc-section-number">5</span> Matematica</a></li>
 <li><a href="#/immagini-e-tabelle" id="/toc-immagini-e-tabelle"><span
 class="toc-section-number">6</span> Immagini e tabelle</a></li>
+<li><a href="#/a-grande-richiesta-pdfa"
+id="/toc-a-grande-richiesta-pdfa"><span
+class="toc-section-number">7</span> A grande richiesta PDF/A</a></li>
 </ul>
 </nav>
 </section>
@@ -163,10 +166,12 @@ Tools</h1>
 Compilatore</h2>
 <p>Esistono tre varianti principali di compilatore latex:</p>
 <ul>
-<li>PdfLaTeX (Più comune, nato con supporto diretto a PDF)</li>
-<li>XeLaTeX (Riscrittura completa del motore, nato per gestire i
-caratteri Unicode)</li>
-<li>LuaHBLaTeX (Si ispira a PdfLaTeX, aggiunge unicode e LUA)</li>
+<li><code>PdfLaTeX</code> (Più comune, nato con supporto diretto a
+PDF)</li>
+<li><code>XeLaTeX</code> (Riscrittura completa del motore, nato per
+gestire i caratteri Unicode)</li>
+<li><code>LuaHBLaTeX</code> (Si ispira a PdfLaTeX, aggiunge unicode e
+LUA)</li>
 </ul>
 </section>
 <section id="distribuzioni" class="slide level2" data-number="2.2">
@@ -274,24 +279,41 @@ data-number="4">
 Contenuto del testo</h1>
 
 </section>
-<section class="slide level2" data-number="4.1">
+<section id="impostazioni-di-localizzazione" class="slide level2"
+data-number="4.1">
+<h2 data-number="4.1"><span class="header-section-number">4.1</span>
+Impostazioni di localizzazione</h2>
+</section>
+<section class="slide level2" data-number="4.2">
+
+<h3 data-number="4.2.1" id="lingua"><span
+class="header-section-number">4.2.1</span> Lingua</h3>
+<pre class="latex"><code>\usepackage[italian]{babel}</code></pre>
+<h3 data-number="4.2.2" id="formato-input"><span
+class="header-section-number">4.2.2</span> Formato Input <a href="#/fn1"
+class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a></h3>
+<pre class="latex"><code>\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}</code></pre>
+</section>
+<section class="slide level2" data-number="4.3">
 
 <p>Adesso arriva la parte clue, stiamo scrivendo il nostro testo, ci
 accorgiamo che vogliamo fare qualche cosa di particolare, ci servono
 degli “ambienti”.</p>
 </section>
-<section class="slide level2" data-number="4.2">
+<section class="slide level2" data-number="4.4">
 
 <h3 class="unnumbered" id="sintassi">SINTASSI</h3>
 <pre class="latex"><code>\begin{ambiente}
 Contenuto
 \end{ambiente}</code></pre>
 </section>
-<section id="ambienti-di-base" class="slide level2" data-number="4.3">
-<h2 data-number="4.3"><span class="header-section-number">4.3</span>
+<section id="ambienti-di-base" class="slide level2" data-number="4.5">
+<h2 data-number="4.5"><span class="header-section-number">4.5</span>
 Ambienti di base</h2>
 </section>
-<section class="slide level2" data-number="4.4">
+<section class="slide level2" data-number="4.6">
 
 <p>Con gli elenchi possiamo fare:</p>
 <ul>
@@ -302,7 +324,7 @@ Ambienti di base</h2>
 <li>Scrivere Teoremi</li>
 </ul>
 </section>
-<section class="slide level2" data-number="4.5">
+<section class="slide level2" data-number="4.7">
 
 <h5 class="unnumbered" id="elenchi-puntati">Elenchi Puntati</h5>
 <div class="container">
@@ -339,7 +361,7 @@ Ambienti di base</h2>
 </div>
 </div>
 </section>
-<section class="slide level2" data-number="4.6">
+<section class="slide level2" data-number="4.8">
 
 <h5 class="unnumbered" id="descrizioni">Descrizioni</h5>
 <div class="container">
@@ -372,7 +394,7 @@ Per gli elenchi in cui ogni elemento cominchia con un testo a piacere.
 </div>
 </div>
 </section>
-<section class="slide level2" data-number="4.7">
+<section class="slide level2" data-number="4.9">
 
 <h5 class="unnumbered" id="citazioni">Citazioni</h5>
 <p>Intendiamo citazioni riportate, non è il tipico genere di citazione
@@ -382,7 +404,7 @@ trovata nei testi scientifici. Se ne possono fare di due tipi:</p>
 <li>In Display.</li>
 </ul>
 </section>
-<section class="slide level2" data-number="4.8">
+<section class="slide level2" data-number="4.10">
 
 <h6 class="unnumbered" id="in-linea">IN LINEA</h6>
 <div class="container">
@@ -395,7 +417,7 @@ caffè”</p>
 </div>
 </div>
 </section>
-<section class="slide level2" data-number="4.9">
+<section class="slide level2" data-number="4.11">
 
 <h6 class="unnumbered" id="in-display">IN DISPLAY</h6>
 <p>Tre possibili ambienti: <code>quote</code>, <code>quotation</code> e
@@ -425,11 +447,11 @@ Il mattino si vede dal caffè.
 </div>
 </section>
 <section id="ambienti-scientifici" class="slide level2"
-data-number="4.10">
-<h2 data-number="4.10"><span class="header-section-number">4.10</span>
+data-number="4.12">
+<h2 data-number="4.12"><span class="header-section-number">4.12</span>
 Ambienti scientifici</h2>
 </section>
-<section class="slide level2" data-number="4.11">
+<section class="slide level2" data-number="4.13">
 
 <p>A un fisico generalmente serve avere a disposizione la possibilità di
 scrivere in maniera semplice tre cose:</p>
@@ -438,6 +460,9 @@ scrivere in maniera semplice tre cose:</p>
 <li>Enunciati di Teoremi con dimostrazioni</li>
 <li>Codice</li>
 </ol>
+</section>
+<section class="slide level2" data-number="4.14">
+
 <p>Oltre a questo in generale si aggiungono la possibilità di
 aggiungere:</p>
 <ol type="1">
@@ -447,10 +472,10 @@ aggiungere:</p>
 </ol>
 </section></section>
 <section>
-<section id="scrivere-matematica" class="title-slide slide level1"
+<section id="matematica" class="title-slide slide level1"
 data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span>
-Scrivere Matematica</h1>
+Matematica</h1>
 
 </section>
 <section class="slide level2" data-number="5.1">
@@ -701,7 +726,56 @@ class="header-section-number">6.4.1</span> Esempio</h3>
     \caption{Esempio di figura composta da più sottofigure}
     \label{fig:subfig}
 \end{figure}</code></pre>
+</section>
+<section class="slide level2" data-number="6.5">
+
 </section></section>
+<section>
+<section id="a-grande-richiesta-pdfa" class="title-slide slide level1"
+data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> A
+grande richiesta PDF/A</h1>
+
+</section>
+<section class="slide level2" data-number="7.1">
+
+<p>Per la tesi, questa va fornita all’università in PDF/A-1b</p>
+<p>E’ uno standard disciplinato dalla normativa ISO 19005 per
+l’archiviazione</p>
+</section>
+<section id="cosa-includere" class="slide level2" data-number="7.2">
+<h2 data-number="7.2"><span class="header-section-number">7.2</span>
+Cosa Includere</h2>
+<pre class="latex"><code>\usepackage[a-1b]{pdfx}</code></pre>
+</section>
+<section id="ulteriori-step" class="slide level2" data-number="7.3">
+<h2 data-number="7.3"><span class="header-section-number">7.3</span>
+Ulteriori Step</h2>
+<div class="container">
+<div class="column">
+<p>Serve creare un file <code>output.xmpdata</code></p>
+<p>Contiene metadati da inserire nel file.</p>
+</div>
+<div class="column">
+<pre class="latex"><code>\Title{Mi piace il caffè}
+\Keywords{LaTeX\sep caffè}
+\Author{Stefano Pilosio}
+\Org{LCM}</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2" data-number="7.4">
+
+</section></section>
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Non è necessario specificare formato con
+<code>XeLaTeX</code> e <code>LuaLaTeX</code><a href="#/fnref1"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
     </div>
   </div>
 

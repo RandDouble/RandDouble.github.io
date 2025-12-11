@@ -1,11 +1,13 @@
 ---
-# template: default
 title: LaTeX 2025 in LCM
 ---
+# Corso su LaTeX in LCM
+
+In questo sito sono presenti i materiali usati durante il corso frontale, oltre a questo sono presenti anche i link ai video.
 
 ## Video
 
-WIP
+I video verranno caricati nel [canale youtube ufficiale di LCM](https://www.youtube.com/@ADMINS_LCM)
 
 ## Presentazione
 

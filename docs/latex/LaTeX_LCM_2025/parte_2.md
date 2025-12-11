@@ -3,7 +3,7 @@
 author: '`Stefano Pilosio`'
 title: '`\end{advanced}`'
 subtitle: Corso LaTeX LCM
-date: 21 Marzo 2025
+date: 11 Dicembre 2025
 width: 1500
 header-includes: |
     <link rel="stylesheet" href="dependencies/highlightjs/styles/monokai-sublime.css">
@@ -48,7 +48,10 @@ Direi di risolvere una cosa alla volta.
 
 ## Cosa abbiamo già detto
 
-- Il comando per includere le immagini è `\includegraphics[option]{percorso/verso/immagine}`
+- Il comando per includere le immagini è 
+```latex
+\includegraphics[option]{percorso/verso/immagine}
+```
 - Questo comando è sconsigliato usarlo da solo in quanto inserisce l'immagine inline
 - Latex supporta nativamente `pdf`, `jpeg`, `png` ed `eps`
 - Bisogna usare degli ambienti accessori
@@ -128,14 +131,14 @@ Questo pacchetto sostituisce un pacchetto precedente, quindi contiene anche dell
 \begin{figure}
     \centering
     \subcaptionbox{A cat \label{cat}} {\includegraphics{images/cat}}
-    \subcaptionboc{An elephant\label{elephant}}{\includegraphics{images/elephant}}
+    \subcaptionbox{An elephant\label{elephant}}{\includegraphics{images/elephant}}
     \caption{Two animals}\label{animals}
 \end{figure}
 ```
 
 ---
 
-![](images/gatto_elefante_1.png){width=80%}
+![](images/gatto_elefante_1.png){width=60%}
 
 ---
 
@@ -143,7 +146,7 @@ Questo pacchetto sostituisce un pacchetto precedente, quindi contiene anche dell
 \begin{figure}
     \centering
     \subcaptionbox{A cat \label{cat}}[.4\textwidth] {\includegraphics{images/cat}}%
-    \subcaptionboc{An elephant\label{elephant}}[.4\textwidth]{\includegraphics{images/elephant}}%
+    \subcaptionbox{An elephant\label{elephant}}[.4\textwidth]{\includegraphics{images/elephant}}%
     \caption{Two animals}\label{animals}
 \end{figure}
 ```
@@ -185,6 +188,11 @@ In generale queste regole valgono per tutti i formati non supportati nativamente
 ---
 
 ```latex
+\usepackage{svg}
+
+\begin{figure}
+    \includesvg[width=\textwidth]{percorso.svg}
+\end{figure}
 ```
 
 
@@ -480,7 +488,7 @@ Contro:
 
 Vieni al prossimo openLab di LCM dedicato a Git.
 
-Oppure vieni a prenderti un caffè in LCM (solo 0.50 eurini) e chiedi a un admin o 150ore di spiegarti come funzioan git.
+Oppure vieni a prenderti un caffè in LCM (solo 0.50 eurini) e chiedi a un admin o 150ore di spiegarti come funzioni git.
 
 ---
 
